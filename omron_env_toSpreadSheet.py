@@ -3,12 +3,14 @@ from bluepy import btle
 import inkbird_ibsth1_connect
 import requests
 
-# InkBird MAC ADDRESS
-PERIPHERAL_MAC_ADDRESS = '**:**:**:**:**:**'
-# GAS WebAPP URL
-WEB_APP_URL = 'https://script.google.com/macros/s/******/exec'
-# Google SpreadSheet Sheetname
-deviceName = '*******'
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+PERIPHERAL_MAC_ADDRESS = os.environ.get("MAC_ADDRESS")
+WEB_APP_URL = os.environ.get("WEB_APP_URL")
+deviceName = os.environ.get("DEVICE_NAME")
 
 # ----
 
