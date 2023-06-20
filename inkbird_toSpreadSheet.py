@@ -11,3 +11,5 @@ PERIPHERAL_MAC_ADDRESS = os.environ.get("MAC_ADDRESS")
 sensorValue = inkbird_ibsth1_connect.get_ibsth1_data(PERIPHERAL_MAC_ADDRESS)
 
 print(sensorValue['Temperature'])
+print(sensorValue['Humidity'])
+print(sensorValue['Battery'])

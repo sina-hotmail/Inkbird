@@ -36,7 +36,7 @@ data = {
     'UV': '',
     'Pressure': '',
     'Noise': '',
-    'BatteryVoltage': ''
+    'BatteryVoltage': str(sensorValue['Battery'])
 }
 
 response = requests.post( WEB_APP_URL, data=data)
