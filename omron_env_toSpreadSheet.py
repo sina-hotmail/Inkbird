@@ -14,17 +14,17 @@ deviceName = os.environ.get("DEVICE_NAME")
 
 # ----
 
-#現在時刻を取得
+# get the current time
 date = datetime.today()
-#現在時刻を分単位で丸める
+# round the current time to the nearest minute 
 masterDate = date.replace(second=0, microsecond=0)
 if date.second >= 30:
     masterDate += timedelta(minutes=1)
 
-#センサ値取得
+# get the sensor value
 sensorValue = inkbird_ibsth1_connect.get_ibsth1_data(PERIPHERAL_MAC_ADDRESS)
 
-#Googleスプレッドシートにアップロードする処理
+# upload to the spreadsheet
 data = {
     'DeviceName': deviceName,
     'Date_Master': str(masterDate),
