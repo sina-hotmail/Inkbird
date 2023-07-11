@@ -2,7 +2,6 @@ from datetime import datetime, timedelta
 from bluepy import btle
 import inkbird_ibsth1_connect
 import requests
-import json
 
 import os
 from os.path import join, dirname
@@ -40,5 +39,5 @@ data = {
     'BatteryVoltage': str(sensorValue['Battery'])
 }
 
-response = requests.post( WEB_APP_URL, data=json.dumps(data))
+response = requests.post( WEB_APP_URL, data=data)
 
